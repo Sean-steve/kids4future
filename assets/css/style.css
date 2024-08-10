@@ -1788,19 +1788,19 @@ p {
   .single_services.services_1 {
     background-color: #9238a4; }
     .single_services.services_1::before {
-      background-image: url(../images/services-1.jpg); }
+      background-image: url(../services-1.jpg); }
   .single_services.services_2 {
     background-color: #f86048; }
     .single_services.services_2::before {
-      background-image: url(../images/services-2.jpg); }
+      background-image: url(../services-2.jpg); }
   .single_services.services_3 {
     background-color: #00bdc0; }
     .single_services.services_3::before {
-      background-image: url(../images/services-3.jpg); }
+      background-image: url(../services-3.jpg); }
   .single_services.services_4 {
     background-color: #f1ae44; }
     .single_services.services_4::before {
-      background-image: url(../images/services-1.jpg); }
+      background-image: url(../services-1.jpg); }
   .single_services:hover::before {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
