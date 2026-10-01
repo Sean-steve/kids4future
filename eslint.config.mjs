@@ -11,5 +11,6 @@ export default defineConfig([
     "node_modules/**",
     "assets/**",
     "legacy/**",
+    "supabase/functions/**",
   ]),
 ]);
