@@ -6,7 +6,8 @@ type InquiryKind = "contact" | "volunteer" | "partner";
 
 export function InquiryForm({ kind }: { kind: InquiryKind }) {
   const [state, setState] = useState<"idle" | "sending" | "success" | "error" | "unavailable">("idle");
-  const endpoint = process.env.NEXT_PUBLIC_FORMS_ENDPOINT;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, "");
+  const endpoint = process.env.NEXT_PUBLIC_FORMS_ENDPOINT || (supabaseUrl ? `${supabaseUrl}/functions/v1/inquiries` : undefined);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
