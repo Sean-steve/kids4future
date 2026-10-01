@@ -5,7 +5,7 @@ export const metadata = { title: "Reports & Financials" };
 export default function ReportsPage(){return <main>
   <PageHero eyebrow="Reports & financials" title="Trust should be inspectable." intro="FutureRise will use this page for governance documents, annual reports, audited financial information, program reports and verified fundraising disclosures." tone="mint" />
   <section className="content-section shell">
-    <div className="section-heading"><span className="section-label">Document library</span><h2>Publication structure is ready.</h2><p>Documents will be added after the foundation's legal, governance and financial records are formally approved.</p></div>
+    <div className="section-heading"><span className="section-label">Document library</span><h2>Publication structure is ready.</h2><p>Documents will be added after the foundation’s legal, governance and financial records are formally approved.</p></div>
     <div className="report-list">
       <div className="report-row"><div><strong>Annual report</strong><br/><span>Program activity, outcomes and organizational review</span></div><span className="badge">Pending first reporting year</span></div>
       <div className="report-row"><div><strong>Financial statements / audit</strong><br/><span>Approved financial disclosure and auditor documentation where applicable</span></div><span className="badge">Pending</span></div>
