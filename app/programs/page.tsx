@@ -1,1 +1,23 @@
-const programs=[['Kids4Future','For street-connected and highly vulnerable children: protection, education, family reintegration, healthcare referrals, psychosocial support and long-term development.'],['Rise Boys','For boys and young men: mentorship, positive identity, mental wellbeing, life skills, healthy relationships, vocational and digital skills, entrepreneurship and employment pathways.'],['Family Forward','For families and caregivers: prevention, referral networks, practical strengthening and livelihood pathways that reduce avoidable family separation.'],['Future Skills','For adolescents and young adults: TVET, digital skills, trades, apprenticeships, entrepreneurship, financial capability and dignified work.']];export default function ProgramsPage(){return <main className="content-page"><section className="page-hero mint"><div className="shell"><span className="section-label">Programs</span><h1>Connected support for the whole journey.</h1><p>FutureRise programs are designed to reinforce one another, from immediate protection to family stability, skills and independent adulthood.</p></div></section><section className="shell program-list">{programs.map(([title,text],i)=><article key={title}><span>0{i+1}</span><div><h2>{title}</h2><p>{text}</p></div></article>)}</section></main>}
+import Link from "next/link";
+import { PageHero } from "@/components/PageHero";
+import { programs } from "@/lib/programs";
+
+export const metadata = { title: "Programs" };
+
+export default function ProgramsPage(){
+  return <main>
+    <PageHero eyebrow="Programs" title="Connected support for the whole journey." intro="FutureRise programs reinforce one another—from protection and family stability to mentorship, skills and independent adulthood." tone="mint" />
+    <section className="content-section shell">
+      <div className="content-grid">
+        {programs.map((program)=><article className={`info-card ${program.tone === "mint" ? "leaf" : program.tone}`} key={program.slug}>
+          <div className="program-icon" aria-hidden="true">{program.icon}</div>
+          <span className="eyebrow">{program.eyebrow}</span>
+          <h2>{program.name}</h2>
+          <p>{program.summary}</p>
+          <Link className="text-link" href={`/programs/${program.slug}/`}>Explore {program.name} →</Link>
+        </article>)}
+      </div>
+    </section>
+    <section className="shell content-section"><div className="cta-band"><div><h2>Programs should connect, not compete.</h2><p>A child may move across protection, family-strengthening, mentorship and skills pathways over time. FutureRise is designed around that continuity.</p></div><Link className="button button-light" href="/impact/">See the measurement model</Link></div></section>
+  </main>
+}
