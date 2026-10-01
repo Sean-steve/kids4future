@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./system.css";
+import "./forms.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
