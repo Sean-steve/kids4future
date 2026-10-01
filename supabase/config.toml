@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.mpesa-reconcile]
 verify_jwt = true
+
+[functions.receipt-dispatch]
+verify_jwt = true
