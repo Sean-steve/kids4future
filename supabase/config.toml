@@ -1,0 +1,10 @@
+project_id = "futurerise-foundation"
+
+[functions.inquiries]
+verify_jwt = false
+
+[functions.donation-intent]
+verify_jwt = false
+
+[functions.mpesa-callback]
+verify_jwt = false
