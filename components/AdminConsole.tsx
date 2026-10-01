@@ -17,7 +17,7 @@ export function AdminConsole() {
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState<string | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => Boolean(client));
   const [message, setMessage] = useState("");
   const [counts, setCounts] = useState<Record<string, number | null>>({});
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
@@ -91,10 +91,7 @@ export function AdminConsole() {
   }, [client]);
 
   useEffect(() => {
-    if (!client) {
-      setLoading(false);
-      return;
-    }
+    if (!client) return;
 
     client.auth.getSession().then(({ data }) => {
       const id = data.session?.user.id ?? null;
