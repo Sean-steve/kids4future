@@ -5,7 +5,8 @@ import { FormEvent, useState } from "react";
 const presets = [500, 1000, 2500, 5000];
 
 export function MpesaDonationForm() {
-  const endpoint = process.env.NEXT_PUBLIC_DONATION_ENDPOINT;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, "");
+  const endpoint = process.env.NEXT_PUBLIC_DONATION_ENDPOINT || (supabaseUrl ? `${supabaseUrl}/functions/v1/donation-intent` : undefined);
   const [amount, setAmount] = useState(1000);
   const [state, setState] = useState<"idle" | "sending" | "prompted" | "error" | "unavailable">("idle");
   const [message, setMessage] = useState("");
