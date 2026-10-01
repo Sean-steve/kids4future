@@ -14,6 +14,12 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+  NEXT_PUBLIC_FORMS_ENDPOINT: ${{ vars.NEXT_PUBLIC_FORMS_ENDPOINT }}
+  NEXT_PUBLIC_DONATION_ENDPOINT: ${{ vars.NEXT_PUBLIC_DONATION_ENDPOINT }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
