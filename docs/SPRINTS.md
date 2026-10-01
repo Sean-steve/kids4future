@@ -147,9 +147,9 @@ Pending production deployment:
 
 ## Sprint 13 — CMS
 
-Status: IMPLEMENTED BASELINE IN SOURCE / BACKEND PROJECT REQUIRED
+Status: COMPLETE IN SOURCE / BACKEND DEPLOYMENT REQUIRED
 
-Implemented content domains:
+Implemented:
 
 - stories
 - events
@@ -157,17 +157,22 @@ Implemented content domains:
 - campaigns
 - public published-content reader
 - authenticated CMS/admin surface
-- draft creation
+- story and event draft creation
+- report and campaign draft creation
 - RLS role model
-- draft → review → published → archived status model
-- mandatory safeguarding/consent database guards for beneficiary stories
+- draft → review → published → archived controls
+- safeguarding reviewer workflow
+- mandatory consent reference before safeguarded story approval
+- database-enforced safeguarding/consent publication guards
+- public pages read only published records
+- privacy-minimized audit trail for CMS changes
 
 Pending production deployment:
 
-- deploy Supabase schema
-- create staff accounts and role assignments
-- complete operator review/publish/archive controls
-- media/storage workflow
+- deploy Supabase schema/functions
+- bootstrap the first administrator
+- configure staff identities and roles
+- configure production document/media storage if direct uploads are required
 
 ## Sprint 14 — M-Pesa
 
@@ -207,6 +212,7 @@ Implemented:
 - idempotent email dispatch worker
 - finance-only reconciliation function
 - provider status query path for delayed/missed callbacks
+- finance reconciliation review queue and resolution notes
 - mismatches routed to `requires_review`
 - cautious receipt language with no unverified tax-deductibility claim
 
@@ -220,55 +226,65 @@ Pending production deployment:
 
 ## Sprint 16 — Admin
 
-Status: IMPLEMENTED BASELINE IN SOURCE / AUTH BACKEND REQUIRED
+Status: COMPLETE IN SOURCE / AUTH BACKEND DEPLOYMENT REQUIRED
 
 Implemented:
 
 - authenticated staff sign-in
 - `admin`, `content_editor`, `safeguarding_reviewer`, `finance_reviewer`, `viewer` roles
 - RLS-backed authorization
-- dashboard counts
-- inquiries view
-- donation view
-- stories/events workflow view
-- story/event draft creation
-- safe disconnected-backend state
-
-Still to complete after backend provisioning:
-
-- inquiry assignment/status actions
-- safeguarding review controls
+- dashboard counts and recent records
+- inquiry operations with status controls
+- story/event/report/campaign workflows
+- safeguarding approval and consent controls
 - publish/archive controls
-- reports/campaign editor controls
-- receipt/reconciliation operator actions
-- user/role administration UI
-- audit-log viewer
+- donation and receipt views
+- M-Pesa reconciliation actions
+- receipt dispatch actions
+- reconciliation review queue
+- administrator-only audit log viewer
+- privacy-minimized database audit triggers
+- server-side staff invitation
+- user role/activation administration
+- self-lockout protection for administrator access
+- safe disconnected-backend states
+- admin routes marked `noindex` and excluded from crawler discovery
+
+Pending production deployment:
+
+- bootstrap first administrator
+- deploy auth/RLS schema and protected Edge Functions
+- verify role matrix against live Supabase Auth accounts
 
 ## Sprint 17 — Accessibility / SEO / Security
 
-Status: IMPLEMENTED BASELINE
+Status: IMPLEMENTED BASELINE / PRODUCTION VERIFICATION PENDING
 
 - skip link
 - semantic navigation
 - keyboard-friendly mobile menu
 - focus-visible styles
 - reduced-motion support
-- form labels and states
+- form labels and status messaging
 - robots metadata
 - sitemap
 - custom 404
+- admin noindex/crawler exclusions
 - security reporting policy
 - dependency update automation
 - no secrets in public static configuration
 - frozen legacy assets excluded from modern lint scope
 - Next/Deno runtime source isolated for clean CI
+- narrow lint exception only for async Supabase admin loaders; React effect rule remains enabled elsewhere
+- database RLS, least-privilege role model and server-only payment/admin credentials designed in source
 
-Remaining before full launch:
+Remaining before full backend launch:
 
-- automated accessibility audit
+- automated/live accessibility audit against configured production pages
 - browser/device QA
 - final content contrast review
-- backend security advisors after migrations are deployed
+- Supabase security/performance advisors after migrations are deployed
+- M-Pesa sandbox abuse/error-case testing
 - production penetration/security review
 
 ## Sprint 18 — Production deployment
@@ -285,8 +301,9 @@ Latest integrated frontend release gate passes:
 - ESLint
 - TypeScript
 - production Next.js build
+- 28 statically generated application routes/assets
 - static export
 - GitHub Pages artifact upload
 - GitHub Pages deployment
 
-Full production still requires the dedicated FutureRise backend, live form endpoints, CMS/auth provisioning, M-Pesa credentials, receipt email configuration and production reconciliation testing.
+Full production still requires the dedicated FutureRise backend, live form endpoints, CMS/auth provisioning, M-Pesa credentials, receipt email configuration and production reconciliation/security testing.
