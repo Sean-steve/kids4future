@@ -1,7 +1,22 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
-const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+
+function readServerSecretKey() {
+  const current = Deno.env.get("SUPABASE_SECRET_KEYS");
+  if (current) {
+    try {
+      const keys = JSON.parse(current) as Record<string, string>;
+      return keys.default ?? Object.values(keys)[0] ?? "";
+    } catch {
+      console.error("Could not parse SUPABASE_SECRET_KEYS");
+    }
+  }
+  // Temporary compatibility fallback for projects that have not migrated keys yet.
+  return Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+}
+
+const serverSecretKey = readServerSecretKey();
 const rateLimitSalt = Deno.env.get("RATE_LIMIT_SALT") ?? "futurerise-dev-salt";
 const allowedOrigins = new Set(
   (Deno.env.get("ALLOWED_ORIGINS") ?? "https://sean-steve.github.io,http://localhost:3000")
@@ -10,7 +25,7 @@ const allowedOrigins = new Set(
     .filter(Boolean),
 );
 
-const admin = createClient(supabaseUrl, serviceRoleKey, {
+const admin = createClient(supabaseUrl, serverSecretKey, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
@@ -87,7 +102,7 @@ Deno.serve(async (req) => {
     return json(400, { ok: false, error: "invalid_submission" }, origin);
   }
 
-  if (!supabaseUrl || !serviceRoleKey) {
+  if (!supabaseUrl || !serverSecretKey) {
     console.error("Missing Supabase function configuration");
     return json(503, { ok: false, error: "service_unavailable" }, origin);
   }
