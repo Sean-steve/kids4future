@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.mpesa-callback]
 verify_jwt = false
+
+[functions.mpesa-reconcile]
+verify_jwt = true
