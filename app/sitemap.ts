@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const base = "https://sean-steve.github.io/kids4future";
 const routes = [
   "",
