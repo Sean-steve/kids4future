@@ -4,22 +4,26 @@ import { PageHero } from "@/components/PageHero";
 export const metadata = { title: "Impact" };
 
 const stages = [
-  ["01", "Protect", "Was immediate safety addressed and were urgent referrals completed?"],
-  ["02", "Stabilize", "Does the young person have a documented support plan and continuity of essential services?"],
-  ["03", "Reconnect", "Where appropriate, is family or community reintegration safe and stable?"],
-  ["04", "Develop", "Is the young person progressing in education, wellbeing, mentorship or skills?"],
-  ["05", "Thrive", "Are gains sustained into training, work, family stability and independent adulthood?"],
+  ["01", "Men reached", "Are men finding and returning to trusted spaces for honest conversation and support?"],
+  ["02", "Men supported", "Are men strengthening support networks, seeking help earlier and completing appropriate referrals?"],
+  ["03", "Men prepared", "Are suitable volunteers completing screening, safeguarding and mentor preparation before serving?"],
+  ["04", "Boys reached", "Are prepared mentors creating consistent, safeguarded relationships and development opportunities for boys?"],
+  ["05", "Generations strengthened", "Are boys progressing in wellbeing, education, skills and transition while mentors remain supported and accountable?"],
 ];
 
 export default function ImpactPage(){return <main>
-  <PageHero eyebrow="Impact" title="Measure the journey, not the photo opportunity." intro="FutureRise will report verified outputs and outcomes while protecting the privacy and dignity of every child and family." tone="sky" />
+  <PageHero eyebrow="Impact" title="Measure whether stronger men are building stronger generations." intro="FutureRise measures the full chain: men reached, men supported, men prepared to serve, boys reached and outcomes sustained—without exposing private stories to prove impact." tone="sky" />
   <section className="content-section shell">
     <div className="section-heading"><span className="section-label">Public dashboard</span><h2>Numbers will appear when they are verified.</h2><p>Until operational data is audited, FutureRise will not publish invented beneficiary counts, fundraising totals or success rates.</p></div>
     <div className="stat-grid">
-      {['Children supported','Safe reintegrations','Education continuations','Youth into skills/work'].map((label)=><article className="stat-card placeholder-stat" key={label}><strong>Verification pending</strong><span>{label}</span></article>)}
+      {["Men engaged","Professional referrals completed","Mentors prepared","Boys supported"].map((label)=><article className="stat-card placeholder-stat" key={label}><strong>Verification pending</strong><span>{label}</span></article>)}
     </div>
   </section>
-  <section className="content-section soft"><div className="shell"><div className="section-heading"><span className="section-label">Measurement model</span><h2>Five stages of progress.</h2></div><div className="timeline">{stages.map(([num,title,text])=><article key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
-  <section className="content-section shell"><div className="content-grid three"><article className="info-card sun"><h3>Outputs</h3><p>Activities completed: referrals, school support, mentoring sessions, training placements and family follow-up.</p></article><article className="info-card sky"><h3>Outcomes</h3><p>Meaningful changes: safety, education retention, stable reintegration, skills progression and transition to opportunity.</p></article><article className="info-card leaf"><h3>Evidence</h3><p>Aggregated operational records, reconciled donations, partner confirmations and periodic review—not public exposure of child case files.</p></article></div></section>
-  <section className="shell content-section"><div className="cta-band"><div><h2>Transparency includes what we do not publish.</h2><p>Individual protection histories, exact child locations, medical details and identifying case information remain outside the public impact dashboard.</p></div><Link className="button button-light" href="/reports/">Reports & financials</Link></div></section>
+  <section className="content-section soft"><div className="shell"><div className="section-heading"><span className="section-label">Measurement model</span><h2>Follow the same direction as the program.</h2></div><div className="timeline">{stages.map(([num,title,text])=><article key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
+  <section className="content-section shell"><div className="content-grid three">
+    <article className="info-card berry"><h3>Men</h3><p>Participation, continuity, support-network strength, earlier help-seeking and appropriate referral completion.</p></article>
+    <article className="info-card sky"><h3>Reach Back</h3><p>Screening, training, safeguarding compliance, supervision and mentor continuity.</p></article>
+    <article className="info-card sun"><h3>Boys</h3><p>Mentorship continuity, wellbeing, education, skills, opportunity and healthy transition indicators.</p></article>
+  </div></section>
+  <section className="shell content-section"><div className="cta-band"><div><h2>Impact never requires public exposure.</h2><p>Private mental-health information, child protection histories, exact locations, medical details and identifying case information remain outside the public dashboard.</p></div><Link className="button button-light" href="/reports/">Reports & financials</Link></div></section>
 </main>}
