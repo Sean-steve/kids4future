@@ -4,7 +4,7 @@ import { actionNav, primaryNav } from "@/lib/site";
 export function SiteHeader() {
   return (
     <>
-      <div className="announcement">🌈 Building boys. Supporting men. Strengthening generations.</div>
+      <div className="announcement">🤝 Stand with men. Reach back to boys.</div>
       <header className="site-header shell">
         <Link className="brand" href="/" aria-label="FutureRise Foundation home">
           <span className="brand-mark">FR</span>
