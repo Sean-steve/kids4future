@@ -2,8 +2,9 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 const footerLinks = [
-  ["About", "/about/"], ["Programs", "/programs/"], ["Impact", "/impact/"],
-  ["Stories", "/stories/"], ["Events", "/events/"], ["Safeguarding", "/safeguarding/"],
+  ["About", "/about/"], ["Our Work", "/programs/"], ["Brotherhood", "/programs/brotherhood/"],
+  ["Mentorship", "/programs/mentorship/"], ["Impact", "/impact/"], ["Stories", "/stories/"],
+  ["Events", "/events/"], ["Get Support", "/get-help/"], ["Safeguarding", "/safeguarding/"],
   ["Reports", "/reports/"], ["Privacy", "/privacy/"], ["Contact", "/contact/"],
 ];
 
@@ -27,7 +28,7 @@ export function SiteFooter() {
           <span>{site.location}</span>
         </div>
       </div>
-      <div className="shell copyright">© 2026 FutureRise Foundation. Public development website. Beneficiary privacy and safeguarding come first.</div>
+      <div className="shell copyright">© 2026 FutureRise Foundation. Public development website. Beneficiary privacy, dignity and safeguarding come first.</div>
     </footer>
   );
 }
