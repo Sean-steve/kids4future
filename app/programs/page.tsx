@@ -1,33 +1,29 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { programs } from "@/lib/programs";
 
-export const metadata = { title: "Our Work" };
+export const metadata = { title: "For Boys" };
 
 export default function ProgramsPage(){
   return <main>
-    <PageHero eyebrow="Our work" title="Support across the journey of becoming—and being—a man." intro="FutureRise connects child protection, boys' development, family strength, skills, men's wellbeing and mentorship into one intergenerational system." tone="mint" />
+    <PageHero eyebrow="For boys" title="The boys come from the men." intro="FutureRise starts by supporting men. The boys' work grows from the men who are ready to reach back, supported by structured programs around mentorship, protection, skills and family stability." tone="mint" />
+
     <section className="content-section shell">
       <div className="section-heading">
-        <span className="section-label">Grow → Rise → Stand → Reach back</span>
-        <h2>Six pathways designed to reinforce one another.</h2>
-        <p>Someone may enter FutureRise at a moment of crisis, during adolescence, while preparing for work, as a father under pressure or later as a mentor ready to serve.</p>
+        <span className="section-label">Where boys fit</span>
+        <h2>Not a separate starting point. The next generation.</h2>
+        <p>The boys&apos; work is the downstream impact of stronger men choosing to become present, responsible and prepared role models.</p>
       </div>
       <div className="content-grid">
-        {programs.map((program)=><article className={`info-card ${program.tone === "mint" ? "leaf" : program.tone}`} key={program.slug}>
-          <div className="program-icon" aria-hidden="true">{program.icon}</div>
-          <span className="eyebrow">{program.eyebrow}</span>
-          <h2>{program.name}</h2>
-          <p>{program.summary}</p>
-          <Link className="text-link" href={`/programs/${program.slug}/`}>Explore {program.name} →</Link>
-        </article>)}
+        <article className="info-card sun"><span className="eyebrow">Flagship impact arm</span><h2>Kids4Future</h2><p>Protection, education, mentorship and long-term development for vulnerable boys and children.</p><Link className="text-link" href="/programs/kids4future/">Explore Kids4Future →</Link></article>
+        <article className="info-card sky"><span className="eyebrow">Adolescence</span><h2>Rise Boys</h2><p>Mentorship, identity, wellbeing, relationships, life skills and preparation for healthy adulthood.</p><Link className="text-link" href="/programs/rise-boys/">Explore Rise Boys →</Link></article>
+        <article className="info-card berry"><span className="eyebrow">Capability</span><h2>Future Skills</h2><p>Digital skills, TVET, apprenticeships, entrepreneurship and work-readiness pathways.</p><Link className="text-link" href="/programs/future-skills/">Explore Future Skills →</Link></article>
+        <article className="info-card leaf"><span className="eyebrow">Environment</span><h2>Family Forward</h2><p>Caregiver and family-strengthening support around boys so development is not isolated from home and community.</p><Link className="text-link" href="/programs/family-forward/">Explore Family Forward →</Link></article>
       </div>
     </section>
-    <section className="shell content-section">
-      <div className="cta-band">
-        <div><h2>Support does not end at the first intervention.</h2><p>FutureRise is built around continuity: protect when necessary, develop capability, support men through difficult seasons and create a safeguarded route for prepared adults to strengthen the next generation.</p></div>
-        <Link className="button button-light" href="/impact/">See the measurement model</Link>
-      </div>
-    </section>
+
+    <section className="content-section soft"><div className="shell">
+      <div className="section-heading"><span className="section-label">The bridge</span><h2>Men do not move directly from receiving help to mentoring boys.</h2><p>Reaching back requires willingness, stability, screening, safeguarding training, role preparation and supervision.</p></div>
+      <div className="cta-band"><div><h2>Support men first.</h2><p>FutureRise Brotherhood is the primary entry point. Mentorship is the bridge. Boys are the next-generation impact.</p></div><Link className="button button-light" href="/programs/brotherhood/">Start with Brotherhood</Link></div>
+    </div></section>
   </main>
 }
