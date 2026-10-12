@@ -11,7 +11,7 @@ export const metadata = {
     template: "%s | FutureRise Foundation",
   },
   description:
-    "FutureRise Foundation supports vulnerable children and young people through protection, family strengthening, education, mentorship, skills and opportunity.",
+    "FutureRise Foundation helps boys, young men and men build healthier, stronger and more purposeful lives through protection, mentorship, wellbeing support, skills, opportunity and service.",
   metadataBase: new URL("https://sean-steve.github.io/kids4future/"),
 };
 
