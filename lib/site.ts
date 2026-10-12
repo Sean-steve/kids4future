@@ -1,18 +1,18 @@
 export const site = {
   name: "FutureRise Foundation",
   shortName: "FutureRise",
-  tagline: "Receive support. Rise. Reach back.",
+  tagline: "Stand with men. Reach back to boys.",
   email: "streetkids4future@gmail.com",
   location: "Nairobi, Kenya",
   paypalUrl: "https://www.paypal.com/donate/?hosted_button_id=NDU26JYV34K9G",
 };
 
 export const primaryNav = [
-  { href: "/about/", label: "About" },
-  { href: "/programs/", label: "Our Work" },
-  { href: "/programs/brotherhood/", label: "Brotherhood" },
-  { href: "/programs/mentorship/", label: "Mentorship" },
+  { href: "/programs/brotherhood/", label: "For Men" },
+  { href: "/programs/mentorship/", label: "Reach Back" },
+  { href: "/programs/", label: "For Boys" },
   { href: "/impact/", label: "Impact" },
+  { href: "/about/", label: "About" },
   { href: "/get-help/", label: "Get Support" },
 ];
 
