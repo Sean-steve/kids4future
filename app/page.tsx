@@ -54,7 +54,7 @@ export default function Home() {
         <div className="section-heading narrow">
           <span className="section-label">The life journey</span>
           <h2>Grow → Rise → Stand → Reach back.</h2>
-          <p>This public model connects prevention, development, men's wellbeing and intergenerational mentorship without treating people as permanent beneficiaries.</p>
+          <p>This public model connects prevention, development, men&apos;s wellbeing and intergenerational mentorship without treating people as permanent beneficiaries.</p>
         </div>
         <div className="journey-list">
           {lifeJourney.map(([num,title,text]) => <article key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}
@@ -67,7 +67,7 @@ export default function Home() {
           <div className="section-heading">
             <span className="section-label">Our work</span>
             <h2>Six connected pathways. One stronger generation.</h2>
-            <p>Child protection, youth development, family stability, skills, men's wellbeing and mentorship are designed to reinforce one another.</p>
+            <p>Child protection, youth development, family stability, skills, men&apos;s wellbeing and mentorship are designed to reinforce one another.</p>
           </div>
           <div className="program-grid">
             {programs.map((program) => <article className={`program-card ${program.tone}`} key={program.title}>
