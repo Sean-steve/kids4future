@@ -4,7 +4,7 @@ import { actionNav, primaryNav } from "@/lib/site";
 export function SiteHeader() {
   return (
     <>
-      <div className="announcement">🌈 Building safer childhoods and stronger futures across Kenya.</div>
+      <div className="announcement">🌈 Building boys. Supporting men. Strengthening generations.</div>
       <header className="site-header shell">
         <Link className="brand" href="/" aria-label="FutureRise Foundation home">
           <span className="brand-mark">FR</span>
@@ -21,6 +21,8 @@ export function SiteHeader() {
           <summary aria-label="Open navigation menu">Menu</summary>
           <nav aria-label="Mobile navigation">
             {[...primaryNav, ...actionNav].map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+            <Link href="/stories/">Stories</Link>
+            <Link href="/events/">Events</Link>
             <Link href="/reports/">Reports</Link>
             <Link href="/safeguarding/">Safeguarding</Link>
             <Link href="/contact/">Contact</Link>
