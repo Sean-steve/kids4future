@@ -4,22 +4,21 @@ import { PageHero } from "@/components/PageHero";
 export const metadata = { title: "Get Support" };
 
 export default function GetHelpPage(){return <main>
-  <PageHero eyebrow="Get support" title="You do not have to carry everything alone." intro="FutureRise is building separate, safeguarded pathways for children and for adult men. We are not an emergency service and peer support does not replace qualified professional care." tone="coral" />
+  <PageHero eyebrow="For men" title="You do not have to carry everything alone." intro="FutureRise begins with men: honest conversation, peer connection, practical guidance and earlier help-seeking. Peer support does not replace qualified professional or emergency care." tone="coral" />
 
   <section className="content-section shell">
-    <div className="danger-note"><strong>Immediate danger in Kenya:</strong> call <strong>999</strong> or <strong>112</strong>. For a child-protection concern, call the National Child Helpline on <strong>116</strong>. If someone may act on suicidal thoughts or is in immediate danger, seek emergency help now rather than waiting for a FutureRise response.</div>
-    <div className="content-grid" style={{marginTop:24}}>
-      <article className="info-card sun"><span className="eyebrow">A child or boy may be unsafe</span><h2>Child protection</h2><p>The National Child Helpline can receive reports, provide counselling and coordinate referrals with child-protection services.</p><div className="hero-actions"><a className="button" href="tel:116">Call 116</a><a className="button button-ghost" href="https://wa.me/254722116116">WhatsApp 0722 116 116</a></div></article>
-      <article className="info-card berry"><span className="eyebrow">I am a man looking for support</span><h2>Men&apos;s support pathway</h2><p>FutureRise Brotherhood is being designed for conversations around mental wellbeing, loneliness, money, work, relationships, fatherhood, grief, identity, violence, purpose and other pressures men may carry silently.</p><Link className="button" href="/programs/brotherhood/">See how Brotherhood works</Link></article>
+    <div className="content-grid">
+      <article className="info-card berry"><span className="eyebrow">I am a man looking for support</span><h2>Start with Brotherhood</h2><p>FutureRise Brotherhood is designed for conversations around mental wellbeing, loneliness, money, work, relationships, fatherhood, grief, identity, violence, purpose and other pressures men may carry silently.</p><Link className="button" href="/programs/brotherhood/">See how Brotherhood works</Link></article>
+      <article className="info-card sky"><span className="eyebrow">How support works</span><h2>Talk → work through options → refer</h2><p>Peer support creates room to be heard and think through next steps. When something is outside peer scope, the responsible next step is qualified professional or emergency support.</p></article>
     </div>
   </section>
 
   <section className="content-section soft"><div className="shell">
-    <div className="section-heading"><span className="section-label">What FutureRise support means</span><h2>Conversation before crisis. Professional help when peer support is not enough.</h2></div>
-    <div className="content-grid three">
-      <article className="info-card"><h3>Talk</h3><p>Trusted, facilitated spaces where men can speak honestly without ridicule and without being forced to disclose more than they choose.</p></article>
-      <article className="info-card"><h3>Work through options</h3><p>Peer support can help a man think through practical next steps, relationships, work, money, fatherhood, habits and support networks.</p></article>
-      <article className="info-card"><h3>Refer</h3><p>When a situation is beyond peer scope, FutureRise should connect the person to an appropriate qualified professional or emergency service.</p></article>
+    <div className="section-heading"><span className="section-label">Safety</span><h2>Some situations need immediate or specialist help.</h2></div>
+    <div className="danger-note"><strong>Immediate danger in Kenya:</strong> call <strong>999</strong> or <strong>112</strong>. If someone may act on suicidal thoughts or is in immediate danger, seek emergency help now rather than waiting for a FutureRise response.</div>
+    <div className="content-grid" style={{marginTop:24}}>
+      <article className="info-card sun"><span className="eyebrow">A child or boy may be unsafe</span><h2>Child protection</h2><p>Kenya&apos;s National Child Helpline can receive reports, provide counselling and coordinate child-protection referrals.</p><div className="hero-actions"><a className="button" href="tel:116">Call 116</a><a className="button button-ghost" href="https://wa.me/254722116116">WhatsApp 0722 116 116</a></div></article>
+      <article className="info-card"><span className="eyebrow">FutureRise boundary</span><h2>Brotherhood is not clinical care.</h2><p>FutureRise should connect men to qualified mental-health, medical, legal, safeguarding or emergency services when peer support is not enough.</p></article>
     </div>
   </div></section>
 
