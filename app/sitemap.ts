@@ -11,6 +11,8 @@ const routes = [
   "/programs/rise-boys",
   "/programs/family-forward",
   "/programs/future-skills",
+  "/programs/brotherhood",
+  "/programs/mentorship",
   "/impact",
   "/stories",
   "/events",
@@ -27,7 +29,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${base}${route}/`,
-    lastModified: new Date("2026-10-01"),
+    lastModified: new Date("2026-10-12"),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.7,
   }));
