@@ -2,10 +2,11 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 const footerLinks = [
-  ["About", "/about/"], ["Our Work", "/programs/"], ["Brotherhood", "/programs/brotherhood/"],
-  ["Mentorship", "/programs/mentorship/"], ["Impact", "/impact/"], ["Stories", "/stories/"],
-  ["Events", "/events/"], ["Get Support", "/get-help/"], ["Safeguarding", "/safeguarding/"],
-  ["Reports", "/reports/"], ["Privacy", "/privacy/"], ["Contact", "/contact/"],
+  ["For Men", "/programs/brotherhood/"], ["Reach Back", "/programs/mentorship/"],
+  ["For Boys", "/programs/"], ["Impact", "/impact/"], ["About", "/about/"],
+  ["Get Support", "/get-help/"], ["Stories", "/stories/"], ["Events", "/events/"],
+  ["Safeguarding", "/safeguarding/"], ["Reports", "/reports/"], ["Privacy", "/privacy/"],
+  ["Contact", "/contact/"],
 ];
 
 export function SiteFooter() {
@@ -28,7 +29,7 @@ export function SiteFooter() {
           <span>{site.location}</span>
         </div>
       </div>
-      <div className="shell copyright">© 2026 FutureRise Foundation. Public development website. Beneficiary privacy, dignity and safeguarding come first.</div>
+      <div className="shell copyright">© 2026 FutureRise Foundation. Supporting men first, then creating safeguarded pathways for men to strengthen boys coming behind them.</div>
     </footer>
   );
 }
